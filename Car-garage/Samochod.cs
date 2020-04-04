@@ -14,6 +14,7 @@ namespace Car_garage
         private int pojemnoscSilnika;
         private double srednieSpalanie;
         private static int iloscSamochodow = 0;
+        private string numerRejestracyjny;
 
         public Samochod()
         {
@@ -25,13 +26,14 @@ namespace Car_garage
             iloscSamochodow++;
         }
 
-        public Samochod(string marka_, string model_, int iloscDrzwi_, int pojemnoscSilnika_, double srednieSpalanie_)
+        public Samochod(string marka, string model, int iloscDrzwi, int pojemnoscSilnika, double srednieSpalanie, string numerRejestracyjny)
         {
-            this.marka = marka_;
-            this.model = model_;
-            this.iloscDrzwi = iloscDrzwi_;
-            this.pojemnoscSilnika = pojemnoscSilnika_;
-            this.srednieSpalanie = srednieSpalanie_;
+            this.marka = marka;
+            this.model = model;
+            this.iloscDrzwi = iloscDrzwi;
+            this.pojemnoscSilnika = pojemnoscSilnika;
+            this.srednieSpalanie = srednieSpalanie;
+            this.numerRejestracyjny = numerRejestracyjny;
             iloscSamochodow++;
         }
 
@@ -48,7 +50,7 @@ namespace Car_garage
         public void WypiszInfo()
         {
             Console.WriteLine("Marka: " + marka + "\nModel: " + model + "\nIlość drzwi: " + iloscDrzwi + "\nPojemność silnika: " +
-                pojemnoscSilnika + "\nŚrednie spalanie: " + srednieSpalanie + "L/100km\n");
+                pojemnoscSilnika + "\nŚrednie spalanie: " + srednieSpalanie + "L/100km\n" + "Nr rej.: " + numerRejestracyjny + "\n");
         }
 
         public static void WypiszIloscSamochodow()
@@ -85,5 +87,12 @@ namespace Car_garage
             get { return srednieSpalanie; }
             set { srednieSpalanie = value; }
         }
+
+        public string  NumerRejestracyjny
+        {
+            get { return numerRejestracyjny; }
+            set { numerRejestracyjny = value; }
+        }
+
     }
 }

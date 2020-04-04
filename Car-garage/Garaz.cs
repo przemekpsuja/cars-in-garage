@@ -30,6 +30,7 @@ namespace Car_garage
 
         public void WprowadzAuto(Samochod s)
         {
+            
             if (listaSamochodow[pojemnoscGarazu - 1] == null)
             {
                 for (int i = 0; i < pojemnoscGarazu; i++)

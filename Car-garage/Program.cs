@@ -10,10 +10,10 @@ namespace Car_garage
     {
         static void Main(string[] args)
         {
-            Samochod s1 = new Samochod("Audi", "A4", 5, 1987, 4.75);
-            Samochod s2 = new Samochod("BMW", "335D", 4, 3021, 13.24);
-            Samochod s3 = new Samochod("Fiat", "Uno", 3, 1101, 4.86);
-            Samochod s4 = new Samochod("Peugeot", "407", 5, 1798, 10.22);
+            Samochod s1 = new Samochod("Audi", "A4", 5, 1987, 4.75, "GD1234");
+            Samochod s2 = new Samochod("BMW", "335D", 4, 3021, 13.24, "GA12345");
+            Samochod s3 = new Samochod("Fiat", "Uno", 3, 1101, 4.86, "GD8765");
+            Samochod s4 = new Samochod("Peugeot", "407", 5, 1798, 10.22, "GDA3745");
             Samochod s5 = new Samochod();
 
             s1.WypiszInfo();
@@ -42,6 +42,13 @@ namespace Car_garage
             g.WyprowadzSamochod();
 
             g.WypiszInfo();
+
+            Osoba o = new Osoba("Adam", "Kowalski", "Gdańsk");
+
+            o.DodajSamochod("GD1234");
+            o.DodajSamochod("GA12345");
+            o.DodajSamochod("GD8765");
+            o.DodajSamochod("GDA3745");
 
             Console.ReadLine();
         }
