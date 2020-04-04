@@ -36,10 +36,12 @@ namespace Car_garage
             g.WprowadzAuto(s3);
             g.WprowadzAuto(s4);
 
+            g.WypiszInfo();
+
             g.WyprowadzSamochod();
             g.WyprowadzSamochod();
-            g.WyprowadzSamochod();
-            g.WyprowadzSamochod();
+
+            g.WypiszInfo();
 
             Console.ReadLine();
         }

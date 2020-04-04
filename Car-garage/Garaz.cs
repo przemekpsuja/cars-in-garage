@@ -45,29 +45,36 @@ namespace Car_garage
             }
             else
             {
-                Console.WriteLine("Garaż jest pełny. Nie można zaparkować {0} {1}", s.Marka, s.Model);
+                Console.WriteLine("Garaż jest pełny. Nie można zaparkować {0} {1}\n", s.Marka, s.Model);
             }
         }
 
         public Samochod WyprowadzSamochod()
-        {
-            int indexDoUsuniecia = liczbaZaparkowanychSamochodow - 1;
-            Samochod usunietySamochod = listaSamochodow[indexDoUsuniecia];
+        { 
+            Samochod usunietySamochod = null;
 
             if (liczbaZaparkowanychSamochodow == 0)
             {
                 Console.WriteLine("Garaż jest pusty");
-
             }
             else
             {
-
+                int indexDoUsuniecia = liczbaZaparkowanychSamochodow - 1;
+                usunietySamochod = listaSamochodow[indexDoUsuniecia];
                 listaSamochodow[indexDoUsuniecia] = null;
                 Console.WriteLine("Wyprowadzono {0} {1}.", usunietySamochod.Marka, usunietySamochod.Model);
                 liczbaZaparkowanychSamochodow--;
 
             }
             return usunietySamochod;
+        }
+
+        public void WypiszInfo()
+        {
+            for (int i = 0; i < liczbaZaparkowanychSamochodow; i++)
+            {
+                listaSamochodow[i].WypiszInfo();
+            }
         }
 
         public string Adres
