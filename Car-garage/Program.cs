@@ -48,19 +48,19 @@ namespace Car_garage
             o.DodajSamochod("GD1234");
             o.DodajSamochod("GA12345");
             o.DodajSamochod("GDA3745");
+            o.DodajSamochod("GD8765");
 
-            //o.UsunSamochod("GD1234");
-            //o.UsunSamochod("GDA3745");
-            //o.UsunSamochod("GA12345");
+            o.UsunSamochod("GD1234");
+            o.UsunSamochod("GA12345");
+            o.UsunSamochod("GA12345");
 
-            o.DodajSamochod("GDA3745");
+            o.DodajSamochod("GA12345");
 
             o.UsunSamochod("GDA3745");
             o.WypiszInfo();
-            //o.UsunSamochod("GD1234");
-            //o.UsunSamochod("GD8765");
-
+            
             Console.ReadLine();
         }
     }
 }
+

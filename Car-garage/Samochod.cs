@@ -93,6 +93,5 @@ namespace Car_garage
             get { return numerRejestracyjny; }
             set { numerRejestracyjny = value; }
         }
-
     }
 }

@@ -37,14 +37,14 @@ namespace Car_garage
                     {
                         samochody[i] = nrRejestracyjny;
                         iloscSamochodow++;
-                        Console.WriteLine("Osoba kupiła samochód o nr rej.: {0}!", nrRejestracyjny);
+                        Console.WriteLine("Osoba kupiła samochód o nr rej.: {0}", nrRejestracyjny);
                         break;
                     }
                 }
             }
             else
             {
-                Console.WriteLine("Masz maksymalną ilość samochodów!");
+                Console.WriteLine("Masz maksymalną ilość samochodów! Nie możesz kupić auta o nr rej.: {0}", nrRejestracyjny);
             }
         }
 
@@ -61,7 +61,7 @@ namespace Car_garage
                 }
                 else if (i == 2 && !string.IsNullOrEmpty(samochody[i]) && !samochody[i].Equals(nrRejestracyjny))
                 {
-                    Console.WriteLine("Ta osoba nie ma auta z tym nr rej.: {0}!", nrRejestracyjny);
+                    Console.WriteLine("Ta osoba nie ma auta z tym nr rej.: {0}", nrRejestracyjny);
                 }
             }
         }
