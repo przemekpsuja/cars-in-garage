@@ -23,30 +23,60 @@ namespace Car_garage
             this.imie = imie;
             this.nazwisko = nazwisko;
             this.adresZamieszkania = adresZamieszkania;
-            samochody = new string[3];
+            this.IloscSamochodow = 0;
+            this.samochody = new string[3];
         }
 
-        public void DodajSamochod(string nrRejestracyjny)
+        public void DodajSamochod(string nrRejestracyjny) 
         {
-            iloscSamochodow++;
-            if (iloscSamochodow < 4)
+            if (iloscSamochodow <= 2 && iloscSamochodow >= 0)
             {
-                if (samochody[iloscSamochodow - 1] == null)
+                for (int i = 0; i < 3; i++)
                 {
-                    samochody[iloscSamochodow - 1] = nrRejestracyjny;
-
-                    Console.WriteLine("Dodano samochód o nr rej: {0}", nrRejestracyjny);
+                    if (samochody[i] == null)
+                    {
+                        samochody[i] = nrRejestracyjny;
+                        iloscSamochodow++;
+                        Console.WriteLine("Osoba kupiła samochód o nr rej.: {0}!", nrRejestracyjny);
+                        break;
+                    }
                 }
             }
             else
             {
-                Console.WriteLine("Nie możesz mieć więcej samochodów!!!");
+                Console.WriteLine("Masz maksymalną ilość samochodów!");
             }
-
-
-
         }
 
+        public void UsunSamochod(string nrRejestracyjny)
+        {
+            for (int i = 0; i < samochody.Length; i++) 
+            {
+                if (!String.IsNullOrEmpty(samochody[i]) && samochody[i].Equals(nrRejestracyjny))
+                {
+                    samochody[i] = null;
+                    iloscSamochodow--;
+                    Console.WriteLine("Osoba sprzedała auto {0}", nrRejestracyjny);
+                    break;
+                }
+                else if (i == 2 && !string.IsNullOrEmpty(samochody[i]) && !samochody[i].Equals(nrRejestracyjny))
+                {
+                    Console.WriteLine("Ta osoba nie ma auta z tym nr rej.: {0}!", nrRejestracyjny);
+                }
+            }
+        }
+    
+        public void WypiszInfo()
+        {
+            Console.WriteLine("Osoba: " + imie + " " + nazwisko + "\nZamieszkała: " + adresZamieszkania + "\nJest właścicielem: ");
+            for (int i = 0; i < samochody.Length; i++)
+            {
+                if (samochody[i] != null)
+                {
+                    Console.WriteLine(samochody[i].ToString());
+                }
+            }
+        }
 
         public string Imie
         {
@@ -73,7 +103,5 @@ namespace Car_garage
             get { return samochody; }
             set { samochody = value; }
         }
-
-
     }
 }
